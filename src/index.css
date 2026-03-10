@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 14% 96%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 210 80% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 10% 18%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 220 14% 90%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 86%;
+    --input: 220 13% 86%;
+    --ring: 210 80% 42%;
+
+    --radius: 0.375rem;
+
+    --industrial: 220 10% 18%;
+    --industrial-foreground: 220 14% 96%;
+    --ocean: 210 80% 42%;
+    --ocean-light: 210 70% 55%;
+    --ocean-dark: 210 85% 30%;
+    --safety: 24 95% 53%;
+    --safety-light: 24 90% 62%;
+    --steel: 220 10% 40%;
+    --steel-light: 220 10% 70%;
+    --steel-dark: 220 12% 22%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 20% 6%;
+    --foreground: 220 14% 96%;
+    --card: 220 18% 10%;
+    --card-foreground: 220 14% 96%;
+    --popover: 220 18% 10%;
+    --popover-foreground: 220 14% 96%;
+    --primary: 210 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 10% 18%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 220 14% 16%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 14% 20%;
+    --input: 220 14% 20%;
+    --ring: 210 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 py-20 md:px-12 lg:px-20 xl:px-32 lg:py-28;
+  }
+
+  .text-gradient-ocean {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-ocean to-ocean-light;
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50 rounded-lg;
+  }
+
+  .industrial-card {
+    @apply bg-secondary text-secondary-foreground rounded-sm border-l-4 border-l-accent;
+  }
+
+  .magnetic-hover {
+    @apply transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .line-accent {
+    @apply w-16 h-1 bg-accent rounded-full;
+  }
+
+  .counter-value {
+    @apply font-heading text-5xl md:text-7xl font-bold text-accent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
